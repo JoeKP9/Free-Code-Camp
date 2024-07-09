@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <!-- TITLE -->
+    <h1 id='title'>Title</h1>
+    <p id='description'>Description</p>
+    <!-- FORM -->
+    <form id='survey-form'>
+      <!-- NAME & EMAIL -->
+      <fieldset>
+        <label id='name-label'>Enter your name: <input id='name' type='text' placeholder='Name' required/></label>
+        <label id='email-label'>Enter your email: <input id='email' type='email' placeholder='Email' required/></label>
+      </fieldset>
+      <!-- AGE & OPTIONS -->
+      <fieldset>
+        <label id='number-label'>Enter your age: <input id='number' type='number' placeholder='Age' min='13' max='120'></label>
+        <select id='dropdown'>
+          <option value=''>(Select one)</option>
+          <option value='1'>option 1</option>
+          <option value='2'>option 2</option>
+        </select>
+      </fieldset>
+      <!-- ACCOUNT & OPTION & BIO -->
+      <fieldset>
+        <label for="personal-account">Personal <input class='inline' value='personal' id="personal-account" type="radio" name="account-type" checked /></label>
+        <label for="business-account">Business <input class='inline' value='business' id="business-account" type="radio" name="account-type" /></label>
+        <label>option 1 <input class='inline' value='1' type='checkbox'/></label>
+        <label>option 2 <input class='inline' value='2' type='checkbox'/></label>
+        <label>option 3 <input class='inline' value='3' type='checkbox'/></label>
+        <label>Text area: <textarea></textarea></label>
+        <input type='submit' id='submit' />
+      </fieldset>
+    </form>
+  </body>
+</html>

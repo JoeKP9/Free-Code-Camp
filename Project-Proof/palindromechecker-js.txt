@@ -1,0 +1,60 @@
+// Getting vars for page elements 
+const input = document.getElementById("text-input")
+const button = document.getElementById('check-btn')
+const result = document.getElementById("result")
+
+function checkPalindrome(text){
+  // spliting string makes it an array
+  const pString = text.split("");
+
+  // Testing logs
+  // console.log(pString.join(""))
+  // console.log(pString.reverse().join(""))
+
+  // checking if sting is palindrome (the same backwards and fowards)
+  const palindrome = (pString.join("") == pString.reverse().join("")) ? true : false;
+
+  // setting result message if palindrome is true or not
+  let resultMsg = `${input.value} ${
+    palindrome ? 'is' : 'is not'
+  } a palindrome`;
+
+  // more tests
+  // console.log(resultMsg);
+
+
+  // removing hidden class from result message
+  result.classList.remove('hidden')
+  // setting text of result message element to result msg
+  result.innerText = resultMsg;
+
+  return palindrome;
+}
+
+// even more tests 
+// console.log(checkPalindrome("0_0 (: /-\ :) 0-0"))
+
+function clearInput(){
+  const text = input.value;
+
+  // checking if input is not empty
+  if (text === ''){
+    alert('Please input a value');
+    return;
+  }
+
+  // cleaning input and forcing lower case
+  checkPalindrome( text.replace(/[^A-Za-z0-9]/gi, '').toLowerCase());
+}
+
+// even even more tests
+// function consolelog() {
+//   console.log(input.value);
+// }
+
+
+// ensuring button element is there (had trouble with DOM)
+if (button){
+  // listening for click to start the process
+  button.addEventListener("click", clearInput);
+}
